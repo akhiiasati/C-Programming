@@ -7,8 +7,13 @@
   - [Difference Between C and C++](#difference-between-c-and-c)
 - [Installing Required Software](#installing-required-software)
   - [Installing C Compiler and CodeLite IDE](#installing-c-compiler-and-codelite-ide)
+    - [Windows](#windows)
+    - [Mac](#mac)
+    - [Linux](#linux)
   - [Setting Up a Development Environment](#setting-up-a-development-environment)
-  - [Compiling and Running C Programs](#compiling-and-running-c-programs)
+- [Writing Your First Program](#writing-your-first-program)
+  - [Hello, World! Example](#hello-world-example)
+  - [Compiling and Running the Program](#compiling-and-running-the-program)
 
 ## Introduction to C
 
@@ -36,17 +41,41 @@ C is strongly associated with UNIX, as it was developed to write the UNIX operat
 
 To begin programming in C, you need to install a C compiler and an integrated development environment (IDE). For this guide, we will use the CodeLite IDE.
 
-#### Step-by-Step Installation
+#### Windows
 
 1. **Install the GCC Compiler**:
-   - **Windows**: Download and install [MinGW](http://www.mingw.org/). Make sure to select the `gcc` component during installation.
-   - **Mac**: Install Xcode Command Line Tools by running `xcode-select --install` in the terminal.
-   - **Linux**: Install GCC using your package manager. For example, on Ubuntu, run `sudo apt-get install build-essential`.
+   - Download and install [MinGW](http://www.mingw.org/). Follow the steps in this [installation guide](http://www.mingw.org/wiki/Getting_Started).
+   - During installation, select the `gcc` component.
 
 2. **Download and Install CodeLite IDE**:
    - Go to the [CodeLite download page](https://codelite.org/download).
-   - Download the appropriate version for your operating system.
-   - Follow the installation instructions for your platform.
+   - Download the Windows installer and run it.
+   - Follow the installation instructions.
+
+#### Mac
+
+1. **Install Xcode Command Line Tools**:
+   - Open a terminal and run the following command:
+     ```sh
+     xcode-select --install
+     ```
+
+2. **Download and Install CodeLite IDE**:
+   - Go to the [CodeLite download page](https://codelite.org/download).
+   - Download the macOS installer and run it.
+   - Follow the installation instructions.
+
+#### Linux
+
+1. **Install GCC**:
+   - Open a terminal and use your package manager to install GCC. For example, on Ubuntu, run:
+     ```sh
+     sudo apt-get install build-essential
+     ```
+
+2. **Download and Install CodeLite IDE**:
+   - Go to the [CodeLite download page](https://codelite.org/download).
+   - Download the appropriate package for your distribution and follow the installation instructions.
 
 ### Setting Up a Development Environment
 
@@ -62,22 +91,37 @@ Once CodeLite and the GCC compiler are installed, set up your development enviro
    - Choose `Console Project` and click `Next`.
    - Follow the prompts to set up your project.
 
-### Compiling and Running C Programs
+## Writing Your First Program
 
-With your development environment set up, you can now compile and run C programs:
+### Hello, World! Example
 
-1. **Write your C code** in the editor. For example, create a `main.c` file.
-2. **Build your project**:
+Let's write a simple "Hello, World!" program to get started with C programming:
+
+1. **Create a new file**:
+   - In your CodeLite project, right-click on the `Source` folder.
+   - Select `New` > `File`.
+   - Name the file `main.c`.
+
+2. **Write the following code in `main.c`**:
+
+    ```c
+    #include <stdio.h>
+
+    int main() {
+        printf("Hello, World!\n");
+        return 0;
+    }
+    ```
+
+### Compiling and Running the Program
+
+To compile and run your first C program:
+
+1. **Build your project**:
    - Click the `Build` button in the toolbar or press `F7`.
-3. **Run your program**:
+
+2. **Run your program**:
    - Click the `Run` button in the toolbar or press `Ctrl+F5`.
 
-Here's a simple example to get you started:
+You should see the output:
 
-```c
-#include <stdio.h>
-
-int main() {
-    printf("Hello, World!\n");
-    return 0;
-}
