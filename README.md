@@ -124,6 +124,14 @@ To compile and run your first C program:
    - Click the `Run` button in the toolbar or press `Ctrl+F5`.
 
 You should see the output:
+```output
+Hello, World!
+```
+
+
+
+
+
 
 
 ## What will be the output of the following code?
