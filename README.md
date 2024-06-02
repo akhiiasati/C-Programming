@@ -125,3 +125,27 @@ To compile and run your first C program:
 
 You should see the output:
 
+
+## What will be the output of the following code?
+
+
+
+    #include <stdio.h>
+
+    void main()
+
+    {
+
+        int x = 1, y = 0, z = 5;
+
+        int a = x && y && z++;
+
+        printf("%d", z);
+
+    }
+
+Ans: ```5```
+
+```Explanation: ``` 
+
+In the above, x && y evaluates to false and since there is && z++ never gets executed. This is referred as short-circuit evaluation where the second boolean evaluation never gets evaluated because it does not need to because the first is false (in an && expression)
