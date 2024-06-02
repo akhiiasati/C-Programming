@@ -14,6 +14,11 @@
 - [Writing Your First Program](#writing-your-first-program)
   - [Hello, World! Example](#hello-world-example)
   - [Compiling and Running the Program](#compiling-and-running-the-program)
+- [Common Errors in C](#common-errors-in-c)
+  - [Compiler Errors](#compiler-errors)
+  - [Compiler Warnings](#compiler-warnings)
+  - [Linker Errors](#linker-errors)
+  - [Runtime Errors](#runtime-errors)
 
 ## Introduction to C
 
@@ -124,20 +129,127 @@ To compile and run your first C program:
    - Click the `Run` button in the toolbar or press `Ctrl+F5`.
 
 You should see the output:
+
 ```output
 Hello, World!
 ```
 
 
+Congratulations! You've written and run your first C program.
 
+## Common Errors in C
 
+### Compiler Errors
+
+Compiler errors occur when the source code violates the syntax rules of the C language. These errors prevent the program from being compiled successfully.
+
+#### Example
+
+```c
+#include <stdio.h>
+
+int main() {
+    printf("Hello, World!\n)
+    return 0;
+}
+```
+
+#### Error Message
+```vbnet
+main.c: In function 'main':
+main.c:4:5: error: missing terminating " character
+    4 |     printf("Hello, World!\n)
+      |     ^~~~~~
+```
+**Explanation**
+
+In this example, the closing double-quote " is missing at the end of the printf statement.
+
+### Compiler Warnings
+
+Compiler warnings indicate potential issues in the code that may not prevent the program from compiling but could lead to unexpected behavior.
+
+Example
+```c
+#include <stdio.h>
+
+int main() {
+    int x;
+    printf("Value of x is: %d\n", x);
+    return 0;
+}
+```
+
+#### Warning Message
+```bash
+
+main.c: In function 'main':
+main.c:5:30: warning: 'x' is used uninitialized in this function [-Wuninitialized]
+    5 |     printf("Value of x is: %d\n", x);
+      |                         ^
+```
+
+**Explanation**
+
+In this example, the variable x is used without being initialized, which can lead to undefined behavior.
+
+### Linker Errors
+
+Linker errors occur when the compiled code references symbols (functions, variables, etc.) that are not defined.
+
+#### Example
+```c
+#include <stdio.h>
+
+int main() {
+    extern void undefinedFunction();
+    undefinedFunction();
+    return 0;
+}
+```
+
+#### Error Message
+```vbnet
+
+undefined reference to `undefinedFunction'
+collect2: error: ld returned 1 exit status
+```
+**Explanation**
+
+In this example, the undefinedFunction is declared but not defined, causing a linker error.
+
+### Runtime Errors
+
+Runtime errors occur when the program compiles successfully but encounters issues while running, such as accessing invalid memory or dividing by zero.
+
+#### Example
+```c
+
+#include <stdio.h>
+
+int main() {
+    int a = 10;
+    int b = 0;
+    int c = a / b;
+    printf("Result is: %d\n", c);
+    return 0;
+}
+```
+
+#### Error Message
+```bash
+Floating point exception (core dumped)
+```
+
+**Explanation**
+
+In this example, dividing by zero causes a runtime error.
 
 
 
 ## What will be the output of the following code?
 
-
-
+```c
     #include <stdio.h>
 
     void main()
@@ -151,7 +263,7 @@ Hello, World!
         printf("%d", z);
 
     }
-
+```
 Ans: ```5```
 
 ```Explanation: ``` 
