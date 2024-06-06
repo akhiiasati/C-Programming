@@ -1,4 +1,4 @@
-# Introduction to C
+c# Introduction to C
 
 ## Table of Contents
 - [Introduction to C](#introduction-to-c)
